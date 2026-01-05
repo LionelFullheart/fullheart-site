@@ -2,71 +2,103 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<title>FullHeart Enterprises — Technology With A Soul</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FullHeart Enterprises</title>
 
 <style>
-html,body{margin:0;background:#000;color:#fff;font-family:Segoe UI,system-ui;overflow-x:hidden}
-.hero{height:100vh;position:relative;display:flex;align-items:center;justify-content:center}
+html,body{margin:0;padding:0;background:#000;font-family:Segoe UI,Arial,sans-serif;overflow:hidden}
 
-.space-bg{
-position:absolute;inset:0;
-background:radial-gradient(circle at center,#0a0a12 0%,#000 70%);
+.hero{
+position:relative;
+height:100vh;
+background:#000;
+overflow:hidden;
 }
 
-.earth{
-position:absolute;bottom:-35%;
-left:50%;transform:translateX(-50%);
-width:120vh;height:120vh;border-radius:50%;
-background:radial-gradient(circle at 35% 35%,#5dade2,#0a1f3d 70%);
-box-shadow:0 0 160px rgba(74,144,226,.4)
-}
-
-.light-beam{
-position:absolute;left:50%;bottom:0;width:3px;height:100vh;
-background:linear-gradient(to top,transparent,#ff8c00,#ff4500,#ff8c00,transparent);
-box-shadow:0 0 60px #ff8c00
-}
-
-.heart-container{
+/* SPACE */
+.space{
 position:absolute;
-top:36%;
+inset:0;
+background:radial-gradient(circle at center,#0b0b15,#000 70%);
+}
+
+/* EARTH */
+.earth{
+position:absolute;
+left:50%;
+bottom:-40%;
+transform:translateX(-50%);
+width:140vh;
+height:140vh;
+border-radius:50%;
+background:radial-gradient(circle at 35% 35%,#6fb6ff,#0a1f3d 70%);
+box-shadow:0 0 200px rgba(90,160,255,.45);
+}
+
+/* ENERGY BEAM */
+.beam{
+position:absolute;
+left:50%;
+bottom:0;
+width:4px;
+height:100vh;
+background:linear-gradient(to top,transparent,#ff8c00,#ff4500,#ff8c00,transparent);
+box-shadow:0 0 120px #ff8c00;
+}
+
+/* HEART */
+.heart{
+position:absolute;
+top:34%;
 left:50%;
 transform:translate(-50%,-50%);
-width:520px;height:520px;
-filter:drop-shadow(0 0 120px #ff8c00);
-z-index:5;
+width:520px;
+height:520px;
+filter:drop-shadow(0 0 180px #ff8c00);
+z-index:10;
+animation:pulse 2.4s infinite;
 }
 
-.heart svg{width:100%;height:100%;}
+@keyframes pulse{
+0%{transform:translate(-50%,-50%) scale(1)}
+50%{transform:translate(-50%,-50%) scale(1.05)}
+100%{transform:translate(-50%,-50%) scale(1)}
+}
 
-.hero-content{
+/* TEXT */
+.copy{
 position:absolute;
 bottom:12%;
+width:100%;
 text-align:center;
-z-index:10;
+z-index:20;
 }
 
-.hero-content h1{
+.copy h1{
 font-size:4rem;
 background:linear-gradient(135deg,#fff,#ff8c00);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
-margin-bottom:10px
+margin:0;
 }
-.hero-content p{color:#ccc;font-size:1.4rem}
 
+.copy p{
+color:#ccc;
+font-size:1.5rem;
+margin-top:10px;
+}
 </style>
 </head>
 
 <body>
 
 <section class="hero">
-<div class="space-bg"></div>
-<div class="earth"></div>
-<div class="light-beam"></div>
 
-<div class="heart-container">
+<div class="space"></div>
+<div class="earth"></div>
+<div class="beam"></div>
+
+<div class="heart">
 <svg viewBox="0 0 200 200">
 <defs>
 <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
@@ -74,11 +106,12 @@ margin-bottom:10px
 <stop offset="100%" stop-color="#ffaa00"/>
 </linearGradient>
 </defs>
-<path d="M100,170 C100,170 30,120 30,80 C30,50 50,30 70,30 C85,30 95,40 100,50 C105,40 115,30 130,30 C150,30 170,50 170,80 C170,120 100,170 100,170 Z" fill="url(#g)"/>
+<path d="M100,170 C100,170 30,120 30,80 C30,50 50,30 70,30 C85,30 95,40 100,50 C105,40 115,30 130,30 C150,30 170,50 170,80 C170,120 100,170 100,170 Z"
+fill="url(#g)"/>
 </svg>
 </div>
 
-<div class="hero-content">
+<div class="copy">
 <h1>Technology With A Soul</h1>
 <p>Power. Intelligence. Destiny.</p>
 </div>
