@@ -1,5 +1,5 @@
 import { SoftwarePage } from "@/components/software-page";
 
-export default function BuildPage() {
+export default function SoftwareRoute() {
   return <SoftwarePage />;
 }

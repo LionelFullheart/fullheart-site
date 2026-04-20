@@ -209,6 +209,13 @@ img {
   z-index: 1;
 }
 
+.brand-cluster {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
 .brand {
   display: flex;
   align-items: center;
@@ -255,6 +262,29 @@ img {
   color: var(--text);
 }
 
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.site-nav a {
+  padding: 0.65rem 0.95rem;
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 0.92rem;
+  transition: background 180ms ease, color 180ms ease;
+}
+
+.site-nav a:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text);
+}
+
 .hero-grid {
   position: relative;
   z-index: 1;
@@ -295,6 +325,11 @@ img {
 .button:hover,
 .button-secondary:hover {
   transform: translateY(-1px);
+}
+
+.button-disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
 }
 
 .button {
@@ -555,6 +590,162 @@ img {
   margin-top: 1rem;
 }
 
+.hub-panel {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.07), transparent 34%),
+    linear-gradient(180deg, rgba(10, 12, 18, 0.84), rgba(8, 10, 15, 0.94));
+}
+
+.hub-grid {
+  grid-template-columns: minmax(0, 1.1fr);
+}
+
+.hub-meta,
+.product-hero {
+  display: grid;
+  gap: 1rem;
+}
+
+.portal-card,
+.book-card,
+.edition-card,
+.checkout-panel,
+.publishing-brand-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02)),
+    var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.portal-card {
+  padding: 1.4rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.product-panel {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.06), transparent 32%),
+    linear-gradient(180deg, rgba(18, 14, 9, 0.76), rgba(10, 11, 15, 0.95)),
+    radial-gradient(circle at top, rgba(255, 164, 54, 0.16), transparent 28%);
+}
+
+.product-hero {
+  position: relative;
+  z-index: 1;
+  padding: 2rem 1rem 1rem;
+}
+
+.product-hero-copy {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.publishing-brand-card {
+  padding: 1.35rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.publishing-logo-frame {
+  position: relative;
+  min-height: 300px;
+  border-radius: calc(var(--radius-lg) - 4px);
+  background:
+    radial-gradient(circle at center, rgba(255, 195, 92, 0.32), transparent 26%),
+    linear-gradient(180deg, rgba(56, 45, 19, 0.9), rgba(18, 16, 14, 0.96));
+  border: 1px solid rgba(255, 195, 92, 0.18);
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+
+.publishing-logo-glow {
+  position: absolute;
+  inset: 18% 18%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 180, 52, 0.55), transparent 70%);
+  filter: blur(30px);
+}
+
+.publishing-logo-placeholder {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 0.4rem;
+  text-align: center;
+  color: #f2deb2;
+}
+
+.publishing-logo-placeholder span {
+  font-size: clamp(1.5rem, 6vw, 2.4rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.publishing-logo-placeholder strong {
+  font-size: clamp(2rem, 8vw, 3rem);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.book-card {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.book-cover {
+  min-height: 320px;
+  border-radius: calc(var(--radius-lg) - 4px);
+  border: 1px solid rgba(255, 196, 86, 0.18);
+  background:
+    radial-gradient(circle at top, rgba(255, 175, 57, 0.26), transparent 20%),
+    linear-gradient(180deg, rgba(47, 23, 6, 0.95), rgba(16, 12, 9, 0.98));
+  display: grid;
+  place-items: end start;
+  overflow: hidden;
+}
+
+.book-cover-inner {
+  padding: 1.35rem;
+  max-width: 28rem;
+}
+
+.book-copy {
+  display: grid;
+  gap: 1rem;
+  padding: 0.35rem;
+}
+
+.edition-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.edition-card {
+  padding: 1.25rem;
+}
+
+.edition-card h4 {
+  margin: 0.8rem 0 0;
+  font-size: 1.2rem;
+}
+
+.edition-card p {
+  margin: 0.65rem 0 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.checkout-panel {
+  padding: 1.25rem;
+  display: grid;
+  gap: 1rem;
+}
+
 .contact-item {
   display: grid;
   gap: 0.3rem;
@@ -610,6 +801,17 @@ img {
     padding: 3.25rem 1.4rem 1.4rem;
   }
 
+  .hub-grid {
+    grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.85fr);
+    align-items: start;
+  }
+
+  .product-hero {
+    grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.8fr);
+    align-items: center;
+    padding: 3rem 1.4rem 1.4rem;
+  }
+
   .grid-two {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -621,6 +823,15 @@ img {
   .form-layout {
     grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
     align-items: start;
+  }
+
+  .book-card {
+    grid-template-columns: minmax(320px, 0.85fr) minmax(0, 1.15fr);
+    align-items: stretch;
+  }
+
+  .edition-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .form-grid {
